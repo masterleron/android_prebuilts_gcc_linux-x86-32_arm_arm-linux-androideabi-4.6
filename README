@@ -7,7 +7,7 @@ Usage
 
 - Put
 <remove-project name="platform/prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.6" />
-<project name="yath/android_prebuilts_gcc_linux-x86-32_arm_arm-linux-androideabi-4.6" path="prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.6" remote="github" revision="jellybean" />
+<project name="masterleron/android_prebuilts_gcc_linux-x86-32_arm_arm-linux-androideabi-4.6" path="prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.6" remote="github" revision="jellybean" />
  to your .repo/local_manifest.xml
  
 - In terminal
