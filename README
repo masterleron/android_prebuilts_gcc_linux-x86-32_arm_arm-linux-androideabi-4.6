@@ -34,3 +34,37 @@ cd $A/ndk/build/tools
 ./gen-platforms.sh --minimal
 ./build-gcc.sh $TC $A/ndk arm-linux-androideabi-4.6
 # find your output in $A/ndk/toolchains/arm-linux-androideabi-4.6/prebuilt/linux-x86
+
+Errors
+========
+# If you get this error when running ./download-toolchain-sources.sh: ERROR: Could not patch sources. Then you need to open download_toolchain_sources.sh located at $A/ndk/build/tools/download-toolchain-sources.sh and locate this paragraph:
+
+# Patch the toolchain sources
+if [ "$OPTION_NO_PATCHES" != "yes" ]; then
+    PATCHES_DIR="$PROGDIR/toolchain-patches"
+    if [ -d "$PATCHES_DIR" ] ; then
+        dump "Patching toolchain sources"
+        run $PROGDIR/patch-sources.sh $FLAGS $TMPDIR $PATCHES_DIR
+        if [ $? != 0 ] ; then
+            dump "ERROR: Could not patch sources."
+            exit 1
+        fi
+    fi
+fi
+
+# Change it to this:
+
+# Patch the toolchain sources
+if [ "$OPTION_NO_PATCHES" != "yes" ]; then
+    PATCHES_DIR="$PROGDIR/toolchain-patches"
+    if [ -d "$PATCHES_DIR" ] ; then
+        dump "Patching toolchain sources"
+        run $PROGDIR/patch-sources.sh $FLAGS $TMPDIR $PATCHES_DIR
+        if [ $? != 0 ] ; then
+            dump "ERROR: Could not patch sources."
+        fi
+    fi
+fi
+
+# Now ruun sudo apt-get install texinfo from terminal
+# Carry on now as normal
