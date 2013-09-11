@@ -6,13 +6,8 @@ Usage
 - Repo sync with your own local_manifest.xml
 
 - Put
-<remove-project name="platform/prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.6" />
 <project name="masterleron/android_prebuilts_gcc_linux-x86-32_arm_arm-linux-androideabi-4.6" path="prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.6" remote="github" revision="jellybean" />
  to your .repo/local_manifest.xml
- 
-- In terminal
-rm -R ~/android/system/prebuilts/gcc/linux-x86/arm/arm-linux-androideabi-4.6
-repo sync
 
 - Make sure I89ed0f00eda1a0bebbc35f39af4bbf0e97f6fade from CyanogenMod is
   applied to your build/ directory (see http://review.cyanogenmod.com/19152). # cd android/system/build # git clone http://review.cyanogenmod.org/CyanogenMod/android_build refs/changes/52/19152/2
